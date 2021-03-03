@@ -1,0 +1,74 @@
+{
+  "name": "@vivliostyle/react",
+  "description": "React component for Vivliostyle",
+  "version": "2.5.1",
+  "author": "Yasuaki Uechi <y@uechi.io>",
+  "scripts": {
+    "build": "microbundle-crl --format modern,cjs && shx rm -rf dist/stories",
+    "build-dev": "microbundle-crl --no-compress --format cjs",
+    "build-storybook": "build-storybook",
+    "clean": "shx rm -rf dist",
+    "dev": "yarn storybook",
+    "storybook": "start-storybook -p 9009",
+    "test": "run-s test:build",
+    "test:build": "yarn build",
+    "test:unit": "cross-env CI=1 react-scripts test --env=jest-environment-jsdom-sixteen",
+    "test:watch": "react-scripts test --env=jest-environment-jsdom-sixteen"
+  },
+  "dependencies": {
+    "@emotion/core": "^10.0.28",
+    "@emotion/styled": "^10.0.27",
+    "@vivliostyle/core": "^2.5.1"
+  },
+  "peerDependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^6.0.21",
+    "@storybook/addon-knobs": "^6.0.21",
+    "@storybook/addon-links": "^6.0.21",
+    "@storybook/addons": "^6.0.21",
+    "@storybook/preset-create-react-app": "^3.1.2",
+    "@storybook/react": "^6.0.21",
+    "@types/jest": "^26.0.3",
+    "@types/react": "^16.9.41",
+    "cross-env": "^7.0.2",
+    "jest-environment-jsdom-sixteen": "^1.0.3",
+    "microbundle-crl": "^0.13.10",
+    "npm-run-all": "^4.1.5",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "^3.4.1",
+    "shx": "^0.3.2"
+  },
+  "source": "src/index.tsx",
+  "types": "dist/index.d.ts",
+  "main": "dist/react-vivliostyle.js",
+  "module": "dist/react-vivliostyle.modern.js",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/vivliostyle/vivliostyle.js.git",
+    "directory": "packages/react"
+  },
+  "bugs": {
+    "url": "https://github.com/vivliostyle/vivliostyle.js/issues"
+  },
+  "homepage": "https://vivliostyle.org",
+  "keywords": [
+    "publication",
+    "react",
+    "vivliostyle"
+  ],
+  "license": "AGPL-3.0",
+  "engines": {
+    "node": ">=10"
+  },
+  "gitHead": "2c3ae9e318b985876223a8c48a089b026c2d394f"
+}
